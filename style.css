@@ -90,7 +90,7 @@
         .app-container {
             width: 100%;
             max-width: 420px;
-            height: 100vh;
+            height: 100dvh;
             position: relative;
             background: rgba(255, 255, 255, 0.01);
             display: flex;
@@ -444,7 +444,7 @@
         .dock-container {
             position: absolute; 
             /* AQUÍ EL CAMBIO: Sumamos 20px + la altura de la barra del sistema */
-            bottom: calc(20px + env(safe-area-inset-bottom)); 
+            bottom: calc(30px + env(safe-area-inset-bottom)); 
             left: 50%; transform: translateX(-50%);
             width: 90%; background: var(--nav-bg); backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border); border-radius: 24px;
