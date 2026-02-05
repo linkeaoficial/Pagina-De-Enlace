@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Elena | Medicina Estética</title>
+    <meta name="description" content="Perfil profesional Dra. Lina - Medicina Estética y Salud">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230ea5e9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3'/><path d='M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4'/><circle cx='20' cy='10' r='2'/></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <div class="ambient-light">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+        
+        <div class="top-bar">
+            <button class="icon-btn" id="themeToggle" aria-label="Cambiar Tema">
+                <i data-lucide="moon" class="icon-moon" size="20"></i>
+                <i data-lucide="sun" class="icon-sun" size="20" style="display: none;"></i>
+            </button>
+            <button class="icon-btn" onclick="shareProfile()" aria-label="Compartir Perfil">
+                <i data-lucide="share-2" size="20"></i>
+            </button>
+        </div>
+
+        <div class="profile-header">
+            <div class="avatar-container" onclick="openPhotoViewer()" style="cursor: pointer;">
+                <img src="https://i.postimg.cc/y8b6nxYL/Dra-Elena.jpg" alt="Dra. Elena" class="avatar-img">
+                <div class="verified-badge" title="Verificado">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">Dra. Elena Rodríguez</h1>
+            <div class="profile-role">
+                <i data-lucide="stethoscope" size="14"></i>
+                Medicina Estética & Anti-aging
+            </div>
+
+            <div class="social-row">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:tu-correo@ejemplo.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="content-area">
+
+            <div id="view-home" class="view-section active">
+                
+                <div onclick="switchView('schedule')" class="link-card">
+                    <div class="link-icon"><i data-lucide="calendar-check"></i></div>
+                    <span class="link-text">Agendar Consulta</span>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </div>
+                
+                <a href="https://wa.me/123456789" class="link-card">
+                    <div class="link-icon"><i data-lucide="message-circle"></i></div>
+                    <span class="link-text">Chat WhatsApp</span>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </a>
+
+                <div onclick="switchView('location')" class="link-card">
+                    <div class="link-icon"><i data-lucide="map-pin"></i></div>
+                    <span class="link-text">Ubicación Consultorio</span>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </div>
+
+                <a href="#" class="link-card">
+                    <div class="link-icon"><i data-lucide="globe"></i></div>
+                    <span class="link-text">Visitar Sitio Web</span>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </a>
+                
+                <a href="https://linkeaoficial.github.io/Linkea-2026/#portafolio" target="_blank" class="simple-footer">
+                    Creado por <span>Linkea</span>
+                </a>
+            </div>
+
+            <div id="view-about" class="view-section">
+                <div class="bio-card">
+                    <h3 style="margin-bottom: 12px; font-weight: 700;">Mi Misión</h3>
+                    <p class="bio-text">
+                        Especialista en resaltar tu belleza natural sin perder tu esencia. Con más de 8 años de experiencia combinando ciencia y arte para el cuidado de tu piel.
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-num">8+</span>
+                            <span class="stat-label">Años Exp.</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">2k+</span>
+                            <span class="stat-label">Pacientes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="link-card" style="margin-top: 10px; border-color: var(--primary);">
+                    <div class="link-icon"><i data-lucide="award"></i></div>
+                    <span class="link-text">Ver Certificaciones</span>
+                </div>
+            </div>
+
+            <div id="view-gallery" class="view-section">
+                <h3 style="font-size: 1.1rem; margin-bottom: 10px; font-weight: 600;">Resultados Reales</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=400&q=80" alt="Tratamiento Facial">
+                        <div class="gallery-overlay">Armonización</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Skin Care">
+                        <div class="gallery-overlay">Piel Radiante</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=400&q=80" alt="Productos">
+                        <div class="gallery-overlay">Rutina Home</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=400&q=80" alt="Consultorio">
+                        <div class="gallery-overlay">Espacios</div>
+                    </div>
+                </div>
+                <button class="link-card" style="width: 100%; justify-content: center; margin-top: 10px;">
+                    Ver más en Instagram
+                </button>
+            </div>
+
+            <div id="view-services" class="view-section">
+                <div class="link-card" onclick="switchView('toxina')">
+                    <div class="link-icon" style="background: rgba(20, 184, 166, 0.1); color: var(--accent);"><i data-lucide="syringe"></i></div>
+                    <div style="text-align: left;">
+                        <span class="link-text" style="display: block;">Toxina Botulínica</span>
+                        <span style="font-size: 0.75rem; opacity: 0.6;">Reducción de líneas de expresión</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </div>
+
+                <div class="link-card" onclick="switchView('hialuronico')">
+                    <div class="link-icon" style="background: rgba(20, 184, 166, 0.1); color: var(--accent);"><i data-lucide="droplets"></i></div>
+                    <div style="text-align: left;">
+                        <span class="link-text" style="display: block;">Ácido Hialurónico</span>
+                        <span style="font-size: 0.75rem; opacity: 0.6;">Relleno y perfilado de labios</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="link-arrow" size="18"></i>
+                </div>
+
+                <div class="bio-card" style="margin-top: 10px; text-align: center;">
+                    <i data-lucide="help-circle" size="32" style="color: var(--primary); margin-bottom: 10px;"></i>
+                    <p style="font-size: 0.9rem;">¿Tienes dudas sobre un tratamiento?</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700; text-decoration: none; display: block; margin-top: 5px;">Escribir a Soporte</a>
+                </div>
+            </div>
+
+            <div id="view-toxina" class="view-section">
+                <div class="back-btn-row">
+                    <button class="back-btn" onclick="switchView('services')">
+                        <i data-lucide="arrow-left" size="18"></i> Volver a Servicios
+                    </button>
+                </div>
+                <div class="gallery-item" style="height: 180px; aspect-ratio: auto; margin-bottom: 5px;">
+                    <img src="https://i.postimg.cc/ncj8HrhH/toxinabotulinica.jpg" alt="Toxina Botulínica">
+                </div>
+                <div class="bio-card">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i data-lucide="syringe" style="color: var(--accent);"></i>
+                        <h3 style="color: var(--accent); margin: 0;">Toxina Botulínica</h3>
+                    </div>
+                    <p class="bio-text" style="font-size: 0.85rem;">Tratamiento estrella para suavizar arrugas dinámicas en frente, entrecejo y patas de gallo, logrando un aspecto descansado y juvenil.</p>
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Resultados en 3-5 días.
+                        </li>
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Procedimiento rápido y seguro.
+                        </li>
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Sin tiempo de recuperación.
+                        </li>
+                    </ul>
+                    <button class="link-card" style="width: 100%; justify-content: center; background: var(--primary); color: white; margin-top: 15px; border: none;" onclick="switchView('schedule')">
+                        Agendar este tratamiento
+                    </button>
+                </div>
+            </div>
+
+            <div id="view-hialuronico" class="view-section">
+                <div class="back-btn-row">
+                    <button class="back-btn" onclick="switchView('services')">
+                        <i data-lucide="arrow-left" size="18"></i> Volver a Servicios
+                    </button>
+                </div>
+                <div class="gallery-item" style="height: 180px; aspect-ratio: auto; margin-bottom: 5px;">
+                    <img src="https://i.postimg.cc/SRGG4WYZ/acido-hialuronico.jpg" alt="Ácido Hialurónico">
+                </div>
+                <div class="bio-card">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i data-lucide="droplets" style="color: var(--accent);"></i>
+                        <h3 style="color: var(--accent); margin: 0;">Ácido Hialurónico</h3>
+                    </div>
+                    <p class="bio-text" style="font-size: 0.85rem;">Ideal para aportar volumen, hidratación y definición a labios, pómulos y mentón, respetando siempre la armonía facial.</p>
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Hidratación profunda.
+                        </li>
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Resultados inmediatos.
+                        </li>
+                        <li style="margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="check-circle-2" size="14" style="color: var(--accent);"></i> Material 100% biocompatible.
+                        </li>
+                    </ul>
+                    <button class="link-card" style="width: 100%; justify-content: center; background: var(--primary); color: white; margin-top: 15px; border: none;" onclick="switchView('schedule')">
+                        Agendar este tratamiento
+                    </button>
+                </div>
+            </div>
+
+            <div id="view-location" class="view-section">
+                <div class="back-btn-row">
+                    <button class="back-btn" onclick="switchView('home', document.getElementById('btn-home'))">
+                        <i data-lucide="arrow-left" size="18"></i> Volver
+                    </button>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-loader" id="mapLoader">
+                        <div class="map-spinner"></div>
+                    </div>
+                    
+                    <iframe class="map-iframe" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.883738870138!2d-74.06886868523795!3d4.614838396647167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a27926e5a6d%3A0xe54d688009a27e02!2sTorre%20Colpatria!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" 
+                            loading="lazy"
+                            onload="document.getElementById('mapLoader').style.display='none'; this.style.opacity='1';">
+                    </iframe>
+                </div>
+
+                <div class="bio-card">
+                    <h3 style="margin-bottom: 10px; font-weight: 700;">Centro Médico Elite</h3>
+                    <p class="bio-text" style="margin-bottom: 10px;">
+                        <i data-lucide="map-pin" size="14" style="color: var(--primary);"></i> Av. Principal 123, Torre B, Consultorio 505.<br>
+                        <span style="font-size: 0.85rem; opacity: 0.7;">Contamos con estacionamiento privado.</span>
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button class="link-card" style="flex: 1; padding: 10px; justify-content: center; background: var(--primary); color: white;">
+                            <i data-lucide="navigation" size="16" style="margin-right: 5px;"></i> Waze
+                        </button>
+                        <button class="link-card" style="flex: 1; padding: 10px; justify-content: center;">
+                            <i data-lucide="map" size="16" style="margin-right: 5px;"></i> Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-schedule" class="view-section">
+                <div class="back-btn-row">
+                    <button class="back-btn" onclick="switchView('home', document.getElementById('btn-home'))">
+                        <i data-lucide="arrow-left" size="18"></i> Volver
+                    </button>
+                </div>
+
+                <div class="bio-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <button class="icon-btn" style="width: 32px; height: 32px;" onclick="changeMonth(-1)"><i data-lucide="chevron-left" size="16"></i></button>
+                        <h3 id="currentMonthLabel" style="margin: 0; font-weight: 700; text-transform: capitalize; color: var(--text-main);">Mes Año</h3>
+                        <button class="icon-btn" style="width: 32px; height: 32px;" onclick="changeMonth(1)"><i data-lucide="chevron-right" size="16"></i></button>
+                    </div>
+                    
+                    <div class="calendar-grid" id="calendarGrid">
+                        <div class="cal-day-name">L</div><div class="cal-day-name">M</div><div class="cal-day-name">M</div>
+                        <div class="cal-day-name">J</div><div class="cal-day-name">V</div><div class="cal-day-name">S</div>
+                        <div class="cal-day-name">D</div>
+                        </div>
+
+                    <h4 style="margin: 20px 0 10px; font-size: 0.9rem; font-weight: 600; opacity: 0.8;">Hora de la Cita (30 min)</h4>
+                    
+                    <div class="custom-select-container" id="customSelect">
+                        <div class="custom-select-trigger" onclick="toggleSelect()">
+                            <span id="triggerText">Selecciona una hora...</span>
+                            <i data-lucide="chevron-down" class="arrow-icon" size="18"></i>
+                        </div>
+                        
+                        <div class="custom-options" id="customOptionsList">
+                            </div>
+                    </div>
+
+                    <h4 style="margin: 20px 0 10px; font-size: 0.9rem; font-weight: 600; opacity: 0.8;">Tus datos</h4>
+                    <input type="text" id="patientName" class="form-input" placeholder="Escribe tu nombre completo">
+
+                    <button class="link-card" onclick="sendBooking()" 
+                        style="width: 100%; justify-content: center; background: var(--primary); color: white; margin-top: 25px; border: none; font-weight: 700;">
+                        Solicitar Disponibilidad
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="dock-container">
+            <button class="dock-item active" id="btn-home" onclick="switchView('home', this)">
+                <i data-lucide="home"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="dock-item" onclick="switchView('about', this)">
+                <i data-lucide="user"></i>
+                <span>Bio</span>
+            </button>
+            <button class="dock-item" onclick="switchView('gallery', this)">
+                <i data-lucide="image"></i>
+                <span>Galería</span>
+            </button>
+            <button class="dock-item" onclick="switchView('services', this)">
+                <i data-lucide="briefcase-medical"></i>
+                <span>Servicios</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <div id="photoViewer" class="photo-viewer">
+        <button class="viewer-close" onclick="closePhotoViewer()">
+            <i data-lucide="x" size="24"></i>
+        </button>
+        
+        <img src="https://i.postimg.cc/y8b6nxYL/Dra-Elena.jpg" class="viewer-img" alt="Dra. Elena Full">
+
+        <div class="viewer-footer">
+            <button class="link-card" style="width: 100%; justify-content: center; background: var(--primary); color: white; border: none;" onclick="goToSchedule()">
+                <i data-lucide="calendar" size="18" style="margin-right: 8px;"></i> Agendar Consulta
+            </button>
+        </div>
+    </div>
+   
+    <script src="script.js"></script>
+    
+</body>
+</html>
