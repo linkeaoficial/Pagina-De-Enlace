@@ -443,8 +443,7 @@
         /* --- BOTTOM DOCK CON ANIMACIÓN --- */
         .dock-container {
             position: absolute; 
-            /* AQUÍ EL CAMBIO: Sumamos 20px + la altura de la barra del sistema */
-            bottom: calc(30px + env(safe-area-inset-bottom)); 
+            bottom: 20px;
             left: 50%; transform: translateX(-50%);
             width: 90%; background: var(--nav-bg); backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border); border-radius: 24px;
@@ -602,3 +601,29 @@
         @keyframes ringRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
         @keyframes pulseFade { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+        /* --- CORRECCIÓN DEFINITIVA MÓVIL (Sin tocar diseño interno) --- */
+        @media (max-width: 480px) {
+    
+        /* 1. Ajuste de altura real (Descuenta la barra de navegación del celular) */
+        .app-container {
+            height: 100dvh !important; 
+        }
+
+        /* 2. Subimos todo el bloque superior reduciendo solo el aire del encabezado */
+        .top-bar {
+            padding-top: 10px !important;   /* Menos espacio arriba */
+            padding-bottom: 0px !important; /* Menos espacio abajo */
+            min-height: 60px; /* Altura mínima controlada */
+        }
+
+        /* 3. ¡IMPORTANTE! Espacio extra abajo para que el menú flotante no tape nada */
+        /* Esto permite que bajes con el dedo y veas el último botón completo */
+        .content-area {
+        padding-bottom: calc(120px + env(safe-area-inset-bottom)) !important; 
+        }
+        .dock-container {
+        /* Aquí usamos el cálculo de 40px + zona segura */
+        bottom: calc(40px + env(safe-area-inset-bottom)) !important; 
+        }
+    }
